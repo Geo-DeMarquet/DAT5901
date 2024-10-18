@@ -1,0 +1,28 @@
+from datetime import date
+
+current_day = date.today() #gets today's date from the datetime library
+
+b_year = int(input("enter your year of birth in date format YYYY "))
+while b_year < 1908 or b_year > 2024: #input validation to ensure variable in given range
+    b_year = int(input("enter your year of birth in date format YYYY ")) 
+b_month = int(input("enter your month of birth in date format MM "))
+while b_month < 1 or b_month > 12:
+    b_month = int(input("enter your month of birth in date format MM "))
+b_date = int(input("enter your date of birth in date format DD "))
+while b_date < 1 or b_date > 31:
+    b_date = int(input("enter your date of birth in date format DD "))
+
+# Create a date object for the birthdate
+full_birth_date = date(b_year, b_month, b_date)
+
+# Calculate the difference in days
+difference = (current_day - full_birth_date).days
+
+#print(f"You are {difference} days old.")
+
+remaining_days = 10000 - difference
+
+if (remaining_days <= 0):
+    print("You're already over 10,000 days old!")
+else:
+    print("You have", remaining_days, " days left until you are 10,000 days old!")
