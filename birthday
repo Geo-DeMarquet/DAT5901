@@ -1,0 +1,28 @@
+print('Enter current year')
+cy = int(input()) #variable names are not very distinct or clear, and there are no comments to make this clear
+
+print('Enter current month') #breaks if string entered, does not specify to enter an integer value
+cm = int(input())
+
+print('Enter current day') #day may imply another string (e.g. Monday, Tuesday), not very robust
+cd = int(input())
+
+ct = 365*cy + 30*cm + cd
+
+print('Enter birth year')
+by = int(input())  #could instead use by = int(input("Enter your etc.")) to reduce number of lines and enhance readability
+
+print('Enter birth month') #also allows months above expected range 1-12
+bm = int(input())
+
+print('Enter birth day')
+bd = int(input())
+
+bt = 365*by + 30*bm + bd
+
+at = ct - bt
+
+if( at < 10000 ):
+    print('You will be 10,000 days old in ', at ,'days' )
+else:
+    print('You are ', at , 'days old' )
